@@ -1,0 +1,109 @@
+.footer {
+  background: #111;
+  color: white;
+  padding: 40px 50px;
+  font-family: Arial, sans-serif;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerColumns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 22%;
+}
+
+.column h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.column ul li:hover {
+  color: white;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialMedia span {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.socialMedia i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.legal {
+  text-align: center;
+}
+
+.legal p {
+  font-size: 14px;
+}
+
+.legal ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.legal ul li {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.legal ul li:hover {
+  color: white;
+}
+
+.mobileApp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobileApp span {
+  font-size: 14px;
+}
+
+.mobileApp i {
+  font-size: 18px;
+  cursor: pointer;
+}

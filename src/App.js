@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserAuth from './UserAuth/userAuth';
+import Home from './components/Home/Home';
 
 const App = () => {
   localStorage.clear();
@@ -8,8 +9,8 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<UserAuth />}>
-          </Route>
+           <Route path="/" element={<UserAuth />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
