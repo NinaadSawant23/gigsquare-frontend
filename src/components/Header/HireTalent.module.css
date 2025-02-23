@@ -1,0 +1,42 @@
+.hireTalentPage {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .hireTalentPage h1 {
+    color: #333;
+  }
+  
+  .hireTalentPage p {
+    color: #666;
+  }
+  
+  .section {
+    margin-top: 30px;
+  }
+  
+  .section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .browseButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .hireTalentPage {
+        padding: 10px; /* Reduce padding on smaller screens */
+      }
+    
+    .section ul {
+        text-align: center; /* Align list items to the left on smaller screens */
+      }
+    }

@@ -1,0 +1,38 @@
+.paymentsPage {
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .paymentsPage h1 {
+    color: #007bff;
+  }
+  
+  .section {
+    margin-top: 30px;
+  }
+  
+  .section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .learnMoreButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .paymentsPage {
+        padding: 10px;
+      }
+    .section ul {
+        text-align: center; /* Add this line to align list items to the left */
+      }
+    }
