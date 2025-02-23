@@ -5,7 +5,7 @@ import styles from "./header.module.css";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>TrustWork.AI</div>
+      <p className='logo-header'>TrustWork.AI</p>
       <nav className={styles.nav}>
         <Link to="/">Find Talent</Link>
         <Link to="/">Find Work</Link>
