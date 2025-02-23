@@ -1,18 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom'
 import styles from "./header.module.css";
 
+
 const Header = () => {
+    const history = useNavigate();
+
   return (
     <header className={styles.header}>
       <p className='logo-header'>TrustWork.AI</p>
-      <nav className={styles.nav}>
-        <Link to="/">Find Talent</Link>
-        <Link to="/">Find Work</Link>
-        <Link to="/">Why TrustWork.AI?</Link>
-        <Link to="/">Connect with Us</Link>
-        <Link to="/">FAQs</Link>
-      </nav>
+      <Nav className="justify-content-end" style={{ width: "100%" }}>
+            <Nav.Link onClick={() => { history("/talent") }} className='page-scroll'>Hire Talent</Nav.Link>
+            <Nav.Link onClick={() => { history("/payments") }}>Payments</Nav.Link>
+            <Nav.Link onClick={() => { history("/contact") }}>Contact Us</Nav.Link>                  
+        </Nav>
     </header>
   );
 };

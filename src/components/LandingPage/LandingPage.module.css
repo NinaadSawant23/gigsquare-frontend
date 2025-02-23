@@ -1,34 +1,35 @@
 .landingPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/freelancing.jpg') no-repeat center center/cover;
-  }
-  
-  .hero {
-    text-align: center;
-    max-width: 600px;
-  }
-  
-  .hero h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #f0e5d0;
-  }
-  
-  .hero p {
-    font-size: 18px;
-    color: #6aeadf;
-  }
-  
-  .ctaButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #79f79d;
-    color: rgb(24, 26, 26);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Images/freelancing.jpg') no-repeat center center/cover;
+  padding-left: 50px; /* Add some left padding for spacing */
+}
+
+.hero {
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #f0e5d0;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #6aeadf;
+}
+
+.ctaButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #79f79d;
+  color: rgb(24, 26, 26);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left; /* Align button text to the left */
+}
