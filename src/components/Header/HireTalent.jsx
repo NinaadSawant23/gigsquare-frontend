@@ -1,94 +1,96 @@
-import React from 'react';
-import styles from './HireTalent.module.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import styles from "./HireTalent.module.css";
+import Footer from "../Footer/footer";
+import Header from "./header";
 
 const HireTalent = () => {
-  const employees = [
-    {
-      id: 1,
-      firstName: 'John',
-      surname: 'Doe',
-      email: 'john.doe@example.com',
-      skills: ['JavaScript', 'React', 'Node.js'],
-      overview: 'Experienced full-stack developer with a passion for building web applications.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    {
-      id: 2,
-      firstName: 'Jane',
-      surname: 'Smith',
-      email: 'jane.smith@example.com',
-      skills: ['Graphic Design', 'UI/UX', 'Adobe Creative Suite'],
-      overview: 'Creative graphic designer with expertise in user interface and user experience design.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    {
-      id: 3,
-      firstName: 'John',
-      surname: 'Doe',
-      email: 'john.doe@example.com',
-      skills: ['JavaScript', 'React', 'Node.js'],
-      overview: 'Experienced full-stack developer with a passion for building web applications.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    {
-      id: 4,
-      firstName: 'Jane',
-      surname: 'Smith',
-      email: 'jane.smith@example.com',
-      skills: ['Graphic Design', 'UI/UX', 'Adobe Creative Suite'],
-      overview: 'Creative graphic designer with expertise in user interface and user experience design.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    {
-      id: 5,
-      firstName: 'John',
-      surname: 'Doe',
-      email: 'john.doe@example.com',
-      skills: ['JavaScript', 'React', 'Node.js'],
-      overview: 'Experienced full-stack developer with a passion for building web applications.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    {
-      id: 6,
-      firstName: 'Jane',
-      surname: 'Smith',
-      email: 'jane.smith@example.com',
-      skills: ['Graphic Design', 'UI/UX', 'Adobe Creative Suite'],
-      overview: 'Creative graphic designer with expertise in user interface and user experience design.',
-      image: 'https://via.placeholder.com/100', // Replace with actual image URL
-    },
-    // Add more dummy employee data as needed
-  ];
+    const [employees, setEmployees] = useState([]);
 
-  return (
-    <div className={styles.hireTalentPage}>
-      <h1>Hire Top Talent</h1>
-      <p>Find the best freelancers and professionals for your projects.</p>
+    useEffect(() => {
+        const fetchFreelancers = async () => {
+            try {
+                // Fetch all users from your backend API
+                const response = await axios.get(
+                    "http://localhost:3500/api/users"
+                );
+                if (response.data.success) {
+                    // Filter out only those users with the profile "freelancer"
+                    const freelancers = response.data.users.filter(
+                        (user) => user.profile === "freelancer"
+                    );
+                    setEmployees(freelancers);
+                } else {
+                    console.error("Failed to fetch users");
+                }
+            } catch (error) {
+                console.error("Error fetching freelancers:", error);
+            }
+        };
 
-      
+        fetchFreelancers();
+    }, []);
 
-      <section className={styles.section}>
-        <h2>Our Talent</h2>
-        <div className={styles.profilesGrid}>
-          {employees.map((employee) => (
-            <div key={employee.id} className={styles.profileCard}>
-              <div className={styles.cardContent}>
-                {employee.image && <img src={employee.image} alt={`${employee.firstName} ${employee.surname}`} className={styles.profileImage} />}
-                <div className={styles.profileDetails}>
-                  <h3>{employee.firstName} {employee.surname}</h3>
-                  <p>{employee.email}</p>
-                  <p>Skills: {employee.skills.join(', ')}</p>
-                  <p>{employee.overview}</p>
-                </div>
-              </div>
+    return (
+        <>
+            <Header />
+            <br />
+            <br />
+            <div className={styles.hireTalentPage}>
+                <p className="logo-header">Hire Top Talent</p>
+                <p>
+                    Find the best freelancers and professionals for your
+                    projects.
+                </p>
+
+                <section className={styles.section}>
+                    <p className="logo-header">Our Verified Talents</p>
+                    <div className={styles.profilesGrid}>
+                        {employees.map((employee) => (
+                            <div
+                                key={employee._id}
+                                className={styles.profileCard}
+                            >
+                                <div className={styles.cardContent}>
+                                    {employee.image && (
+                                        <img
+                                            src={employee.image}
+                                            alt={`${employee.firstname} ${employee.lastname}`}
+                                            className={styles.profileImage}
+                                        />
+                                    )}
+                                    <div className={styles.profileDetails}>
+                                        <h3 style={{ textAlign: "center" }}>
+                                            {employee.firstname}{" "}
+                                            {employee.lastname}
+                                        </h3>
+                                        <p>{employee.email}</p>
+                                        <p>
+                                            Skills:{" "}
+                                            {employee.skillsData &&
+                                            employee.skillsData.skills
+                                                ? employee.skillsData.skills
+                                                : "N/A"}
+                                        </p>
+                                        <p>
+                                            {employee.skillsData &&
+                                            employee.skillsData.overview
+                                                ? employee.skillsData.overview
+                                                : ""}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <button className={styles.browseButton}>Browse Talent</button>
-    </div>
-  );
+            <br />
+            <br />
+            <br />
+            <Footer />
+        </>
+    );
 };
 
 export default HireTalent;

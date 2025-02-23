@@ -238,7 +238,7 @@ export default function SkillForm() {
                                     className="mb-4"
                                 />
                             </MDBValidationItem>
-
+                            <br />
                             {/* Submit Button */}
                             <MDBBtn type="submit" color="primary" block>
                                 Submit

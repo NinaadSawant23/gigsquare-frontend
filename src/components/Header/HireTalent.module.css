@@ -1,75 +1,90 @@
-.hireTalentPage h1{
-  color: #333;
-  text-align: center;
+.hireTalentPage h1 {
+    color: #333;
+    text-align: center;
 }
-.hireTalentPage h2{
-  color: #333;
-  text-align: center;
-}.hireTalentPage p {
-  color: #666;
-  text-align: center;
-}.section {
-  margin-top: 30px;
-}.section ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex; /* Make list items horizontal */
-  justify-content: center; /* Center the list items */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 10px; /* Add space between list items */
-}.section li {
-  padding: 8px 16px; /* Add padding to list items */
-  background-color: #f0f0f0; /* Add background color */
-  border-radius: 4px; /* Add rounded corners */
-}.browseButton {
-  margin-top: 40px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;  /* Add this to make it a block-level element */
-  margin: 0 auto;  /* Add this to center the button horizontally */
-}.profilesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}.profileCard {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}.profileCard:hover {
-  transform: translateY(-2px);
-}.cardContent {
-  padding: 20px;
-}.profileImage {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}.profileDetails {
-  text-align: left;
-}.profileDetails h3 {
-  color: #333;
-  margin-bottom: 8px;
-}.profileDetails p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 5px;
+.hireTalentPage h2 {
+    color: #333;
+    text-align: center;
+}
+.hireTalentPage p {
+    color: #666;
+    text-align: center;
+}
+.section {
+    margin-top: 30px;
+}
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Make list items horizontal */
+    justify-content: center; /* Center the list items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px; /* Add space between list items */
+}
+.section li {
+    padding: 8px 16px; /* Add padding to list items */
+    background-color: #f0f0f0; /* Add background color */
+    border-radius: 4px; /* Add rounded corners */
+}
+.browseButton {
+    margin: 40px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Add this to make it a block-level element */
+    margin: 0 auto; /* Add this to center the button horizontally */
+}
+.profilesGrid {
+    display: grid;
+    padding: 30px;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.profileCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+.profileCard:hover {
+    transform: translateY(-2px);
+}
+.cardContent {
+    padding: 20px;
+}
+.profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.profileDetails {
+    text-align: left;
+}
+.profileDetails h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+.profileDetails p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
 }
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
-.profilesGrid {
-    grid-template-columns: 1fr;
-  }
+    .profilesGrid {
+        grid-template-columns: 1fr;
+    }
 
-.section ul {
-    justify-content: flex-start; /* Align list items to the left on smaller screens */
-  }
+    .section ul {
+        justify-content: flex-start; /* Align list items to the left on smaller screens */
+    }
 }

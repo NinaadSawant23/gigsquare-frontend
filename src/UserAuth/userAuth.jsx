@@ -114,7 +114,11 @@ const UserAuth = () => {
 
                 localStorage.setItem("token", token);
                 localStorage.setItem("user", userName);
-                history("/employeedashboard");
+                if (response.data.profile === "client") {
+                    history("/home");
+                } else {
+                    history("/employeedashboard");
+                }
             }
         } catch (error) {
             if (error.response) {
